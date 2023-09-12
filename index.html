@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Applet</title>
+  </head>
+  <body>
+    <h1 id="taskText">CURRENT TASKS</h1>
+    <div id="container" style="background-color: yellow">
+      <input type="text" id="inputBox" placeholder="Type Task" />
+      <button id="btn-1">Add Task</button>
+      <ul id="taskList"></ul>
+    </div>
+  </body>
+
+  <script>
+    const inputBox = document.getElementById("inputBox");
+    const btn1 = document.getElementById("btn-1");
+    const taskList = document.getElementById("taskList");
+
+    function addTask() {
+      let taskValue = inputBox.value.trim();
+
+      if (taskValue !== "") {
+        const addedTask = document.createElement("li");
+
+        addedTask.textContent = taskValue;
+        addedTask.addEventListener("click", () => {
+          addedTask.classList.toggle("completed");
+        });
+        taskList.appendChild(addedTask);
+
+        inputBox.value = "";
+      }
+    }
+
+    btn1.addEventListener("click", addTask);
+
+    inputBox.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") addTask();
+    });
+  </script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Delegation Example</title>
+  </head>
+  <body>
+    <ul id="taskList">
+      <li>Task 1 <button class="deleteBtn">Delete</button></li>
+      <li>Task 2 <button class="deleteBtn">Delete</button></li>
+      <li>Task 3 <button class="deleteBtn">Delete</button></li>
+    </ul>
+
+    <script>
+      // Attach a single event listener to the taskList element (common ancestor)
+      document
+        .getElementById("taskList")
+        .addEventListener("click", function (event) {
+          // Check if the clicked element is a button with the class "deleteBtn"
+          if (event.target.classList.contains("deleteBtn")) {
+            // Get the parent <li> element of the clicked button
+            const listItem = event.target.parentElement;
+
+            // Remove the <li> element from the list
+            listItem.remove();
+          }
+        });
+    </script>
+  </body>
+</html>

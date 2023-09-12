@@ -1,0 +1,42 @@
+body {
+  background-color: orange;
+}
+
+#btnDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#inputBox {
+  /* margin-right: 10px; */
+}
+#btn-1 {
+  background-color: purple;
+  color: white;
+  /* margin-right: 10px; */
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 100% of the viewport height */
+}
+
+#taskList {
+  border: 2px solid black;
+  padding: 100px;
+}
+
+#taskText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+}

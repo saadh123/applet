@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Applet</title>
+  </head>
+  <body>
+    <form action="/submit" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <div id="btnDiv">
+      <button id="btn1">Click Me</button>
+    </div>
+
+    <div id="container"></div>
+  </body>
+
+  <script>
+    const arr1 = ["hi", "hello", "cool nice", "nice today", "awesome"];
+
+    const btn1 = document.getElementById("btn1");
+    const container = document.getElementById("container");
+
+    const handleClick = () => {
+      const randomIndex = Math.floor(Math.random() * 5);
+      const randomQuote = arr1[randomIndex];
+      container.innerText = arr1[random];
+    };
+
+    btn1.addEventListener("click", handleClick);
+  </script>
+</html>
